@@ -18,7 +18,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents)
   private val carts = new mutable.ListBuffer[Cart]()
   carts += Cart(1)
   carts += Cart(2)
-  implicit val todoListJson = Json.format[Cart]
+  implicit val cartList = Json.format[Cart]
 
   def getAll(): Action[AnyContent] = Action {
     if (carts.isEmpty) {

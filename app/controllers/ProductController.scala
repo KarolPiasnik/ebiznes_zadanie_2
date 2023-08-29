@@ -18,7 +18,7 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
   private val products = new mutable.ListBuffer[Product]()
   products += Product(1, "guma turbo", 2.22, 1)
   products += Product(2, "guma donald", 3.33, 1)
-  implicit val todoListJson = Json.format[Product]
+  implicit val productList = Json.format[Product]
 
   def getAll(): Action[AnyContent] = Action {
     if (products.isEmpty) {
